@@ -66,10 +66,6 @@ const ActionIcons = () => {
     </>
   );
 };
-const Lang = () => {
-  const { styles } = useStyles();
-  return;
-};
 const LoginMessage: React.FC<{
   content: string;
 }> = ({ content }) => {
@@ -132,7 +128,6 @@ const Login: React.FC = () => {
           {'登录'}- {Settings.title}
         </title>
       </Helmet>
-      <Lang />
       <div
         style={{
           flex: '1',
@@ -182,6 +177,7 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined />,
                 }}
+                initialValue={'admin'}
                 placeholder={'用户名: admin or user'}
                 rules={[
                   {
@@ -196,6 +192,7 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <LockOutlined />,
                 }}
+                initialValue={'ant.design'}
                 placeholder={'密码: ant.design'}
                 rules={[
                   {

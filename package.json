@@ -12,9 +12,6 @@
     "postinstall": "max setup",
     "lint": "npm run lint:js && npm run lint:prettier && npm run tsc",
     "lint-staged": "lint-staged",
-    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
-    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src ",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:prettier": "prettier -c --write \"**/**.{js,jsx,tsx,ts,less,md,json}\" --end-of-line auto",
     "openapi": "max openapi",
     "prepare": "husky install",
@@ -29,9 +26,15 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write"]
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 10"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.8.1",
     "@ant-design/pro-components": "^2.6.48",
@@ -41,6 +44,7 @@
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
+    "nprogress": "^0.2.0",
     "omit.js": "^2.0.2",
     "querystring": "^0.2.1",
     "rc-menu": "^9.12.4",
@@ -57,6 +61,7 @@
     "@types/history": "^4.7.11",
     "@types/jest": "^29.5.11",
     "@types/lodash": "^4.14.202",
+    "@types/nprogress": "^0.2.3",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@types/react-helmet": "^6.1.11",
@@ -64,12 +69,9 @@
     "@umijs/lint": "^4.1.1",
     "@umijs/max": "^4.1.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.56.0",
     "express": "^4.18.2",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^10.5.4",
     "mockjs": "^1.1.0",
     "prettier": "^2.8.8",
@@ -80,5 +82,7 @@
     "umi-presets-pro": "^2.0.3",
     "umi-serve": "^1.9.11"
   },
-  "engines": { "node": ">=12.0.0" }
+  "engines": {
+    "node": ">=12.0.0"
+  }
 }
